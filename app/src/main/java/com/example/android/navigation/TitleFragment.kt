@@ -24,6 +24,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+
 import com.example.android.navigation.databinding.FragmentTitleBinding
 
 class TitleFragment : Fragment() {
@@ -35,18 +36,6 @@ class TitleFragment : Fragment() {
                 Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_gameFragment)
                 )
 
-
-        // COMPLETED (09) Call binding.playButton.setOnClickListener and navigate to the gameFragment
-        // Use Navigation.createNavigateOnClickListener with
-        // R.id.action_titleFragment_to_gameFragment
         return binding.root
     }
-    // COMPLETED (06) Add the Title Fragment to the Navigation Graph
-    // Go to the navigation.xml file and select the design tab
-    // Click the add icon with the + on it to add a new destination to the graph
-    // Select fragment_title to add this fragment to the graph as the start destination
-
-    // COMPLETED (08) Connect the Title and Game Fragments with an Action
-    // In the navigation editor, hover over the titleFragment.  Click on the circular connection
-    // point and drag to gameFragment to create the Action
 }
