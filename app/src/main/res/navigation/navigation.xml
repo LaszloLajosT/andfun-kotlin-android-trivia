@@ -49,9 +49,7 @@
         android:id="@+id/gameWonFragment"
         android:name="com.example.android.navigation.GameWonFragment"
         android:label="@string/android_trivia"
-        tools:layout="@layout/fragment_game_won">
-        <!-- TODO (04) Add an action connecting the gameWonFragment to the gameFragment
-             Select PopTo TitleFragment in the editor with inclusive turned off -->
+        tools:layout="@layout/fragment_game_won">  
         <action
             android:id="@+id/action_gameWonFragment_to_gameFragment"
             app:destination="@id/gameFragment"
