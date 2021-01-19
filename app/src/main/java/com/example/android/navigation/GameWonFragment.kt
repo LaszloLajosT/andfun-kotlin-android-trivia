@@ -16,6 +16,7 @@
 
 package com.example.android.navigation
 
+
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import androidx.databinding.DataBindingUtil
@@ -43,13 +44,15 @@ class GameWonFragment : Fragment() {
         val binding: FragmentGameWonBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_won, container, false)
         binding.nextMatchButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(
-                    GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
+            view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
-        var args = GameWonFragmentArgs.fromBundle(requireArguments())
-        Toast.makeText(context,
-                "NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}",
-                Toast.LENGTH_LONG).show()
+        var args = arguments?.let { GameWonFragmentArgs.fromBundle(it) }
+
+        args?.let {
+            Toast.makeText(context,
+                    "NumCorrect: ${args.numCorrect},NumQuestions: ${args.numQuestions}",
+                    Toast.LENGTH_LONG).show()
+        }
         return binding.root
     }
 }
