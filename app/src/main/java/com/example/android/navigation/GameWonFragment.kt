@@ -42,6 +42,7 @@ class GameWonFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding: FragmentGameWonBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_won, container, false)
+        // Declaring that our Fragment has a Menu
         binding.nextMatchButton.setOnClickListener { view: View ->
             view.findNavController().navigate(
                     GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
@@ -50,6 +51,7 @@ class GameWonFragment : Fragment() {
         return binding.root
     }
 
+    // Creating our Share Intent
     private fun getShareIntent() : Intent {
         val args = GameWonFragmentArgs.fromBundle(requireArguments())
         return ShareCompat.IntentBuilder.from(activity!!)
@@ -58,10 +60,12 @@ class GameWonFragment : Fragment() {
                 .intent
     }
 
+    // Starting an Activity with our new Intent
     private fun shareSuccess() {
         startActivity(getShareIntent())
     }
 
+    // Showing the Share Menu Item Dynamically
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.winner_menu, menu)
@@ -72,6 +76,7 @@ class GameWonFragment : Fragment() {
         }
     }
 
+    // Sharing from the Menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.share -> shareSuccess()
