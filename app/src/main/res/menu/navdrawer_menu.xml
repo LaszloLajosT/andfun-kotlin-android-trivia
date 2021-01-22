@@ -6,7 +6,7 @@
         android:icon="@drawable/rules"
         android:title="@string/rules" />
     <item
-        android:id="@+id/about"
+        android:id="@+id/aboutFragment"
         android:icon="@drawable/android"
         android:title="@string/about" />
 </menu>
